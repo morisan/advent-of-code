@@ -91,5 +91,9 @@ end
 
 
 cip = CrazyIP.new('./input_7.txt')
-puts "#{cip.support_tls_count()} addresses support TLS"
-puts "#{cip.support_ssl_count()} addresses support SSL"
+start = Time.now
+puts "#{cip.support_tls_count()} addresses support TLS and took #{Time.now - start}s"
+start = Time.now
+puts "#{cip.support_ssl_count()} addresses support SSL and took #{Time.now - start}s"
+
+
