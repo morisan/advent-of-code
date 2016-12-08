@@ -27,11 +27,7 @@ class Lit
     @screen.each.with_index do |row, index|
       return if index == px_tall
 
-      i = 0
-      px_wide.times do
-        row[i] = '#'
-        i+=1
-      end
+      px_wide.times { |i| row[i] = '#' }
     end
   end
 
