@@ -15,10 +15,8 @@ class Lit
         self.rect!(matches[1].to_i, matches[2].to_i)
       elsif matches = line.match(/^rotate row y=(\d+) by (\d+)$/)
         self.rotate_row!(matches[1].to_i, matches[2].to_i)
-        next
       elsif matches = line.match(/^rotate column x=(\d+) by (\d+)$/)
         self.rotate_col!(matches[1].to_i, matches[2].to_i)
-        next
       end
     end
   end
