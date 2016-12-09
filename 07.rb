@@ -90,7 +90,7 @@ class CrazyIP
 end
 
 
-cip = CrazyIP.new('./input_7.txt')
+cip = CrazyIP.new('./input_07.txt')
 start = Time.now
 puts "#{cip.support_tls_count()} addresses support TLS and took #{Time.now - start}s"
 start = Time.now

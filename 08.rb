@@ -49,6 +49,6 @@ class Lit
 
 end
 
-l = Lit.new('./input_8.txt')
+l = Lit.new('./input_08.txt')
 puts "#{l.get_how_many_pixels_lit()} pixels are lit in this screen:"
 l.print_screen()
