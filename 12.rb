@@ -12,10 +12,8 @@ class AssemBunny
       if matches = instr.match(/^cpy (\S+) (\S+)$/)
         @registers[matches[2]] = self.get_value(matches[1])
       elsif matches = instr.match(/^inc (\S+)$/)
-        raise "no reg for inc" unless @registers[matches[1]]
         @registers[matches[1]] += 1
       elsif matches = instr.match(/^dec (\S+)$/)
-        raise "no reg for dec" unless @registers[matches[1]]
         @registers[matches[1]] -= 1
       elsif matches = instr.match(/^jnz (\S+) (\S+)$/)
         if self.get_value(matches[1]) != 0
