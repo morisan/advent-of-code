@@ -9,17 +9,17 @@ class AssemBunny
     while @program_counter < @instructions.count()
       instr = @instructions[@program_counter].strip()
 
-      if matches = instr.match(/^cpy (\S+) (\S+)$/)
+      if matches = instr.match(/^jnz (\S+) (\S+)$/)
+        if self.get_value(matches[1]) != 0
+          @program_counter += self.get_value(matches[2])
+          next
+        end
+      elsif matches = instr.match(/^cpy (\S+) (\S+)$/)
         @registers[matches[2]] = self.get_value(matches[1])
       elsif matches = instr.match(/^inc (\S+)$/)
         @registers[matches[1]] += 1
       elsif matches = instr.match(/^dec (\S+)$/)
         @registers[matches[1]] -= 1
-      elsif matches = instr.match(/^jnz (\S+) (\S+)$/)
-        if self.get_value(matches[1]) != 0
-          @program_counter += self.get_value(matches[2])
-          next
-        end
       end
 
       @program_counter += 1
